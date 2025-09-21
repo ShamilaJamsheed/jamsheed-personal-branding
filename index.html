@@ -243,6 +243,7 @@ PLUMBING)</h5>
               <i class="bi bi-whatsapp"></i> Send via WhatsApp
             </a>
           </div>
+          <a href="mailto:shamilaabdulkadher@gmail.com" class="btn">Email Me</a>
 
         </form>
       </div>
@@ -291,7 +292,7 @@ PLUMBING)</h5>
       phone = "91" + phone;
     }
 
-    const text = `Name: ${name}%0AEmail: ${email}%0APlace: ${place}%0APhone: ${phone}%0AMessage: ${message}%0AFile: ${fileNameInput}`;
+    const text = `Name: ${name}\nEmail: ${email}\nPlace: ${place}\nPhone: ${phone}\nMessage: ${message}\nFile: ${fileNameInput}`;
     const whatsappNumber = phone; // Use the user's phone as the recipient
     const encodedText = encodeURIComponent(text);
 
