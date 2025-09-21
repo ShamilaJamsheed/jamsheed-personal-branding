@@ -196,106 +196,108 @@ PLUMBING)</h5>
     
 </section>
  <!-- contact section -->
-    <section id="contact" class="bg-light p-5">
-      <div class="container">
-         <h1 class="card border border-white text-center">Connect with me</h1>
-        <div class="row">
-          <div class="col-md-6 offset-md-3 border border-gray rounded p-4">
-            <form>
+<section id="contact" class="bg-light p-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 border border-gray rounded p-4">
+        <form>
 
-              <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name">
-              </div>
-
-              <div class="mb-3">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Enter your Email">
-              </div>
-
-              <div class="mb-3">
-                <label for="inputAddress" class="form-label">Place</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Enter your place">
-              </div>
-
-              <div class="mb-3">
-                <label for="phone" class="form-label">Mobile Number</label>
-                <input type="number" class="form-control" id="phone" placeholder="Enter your mobile number">
-              </div>
-
-              <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">Upload your file</label>
-                <div class="input-group">
-                  <button class="btn btn-outline-secondary" type="button" id="button-file">
-                    <i class="bi bi-upload"></i> Choose File
-                  </button>
-                  <input type="file" class="form-control d-none" id="fileInput">
-                  <input type="text" class="form-control" id="file-name" value="No file chosen" readonly>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <a href="#" id="whatsapp-button" class="btn btn-success w-100">
-                  <i class="bi bi-whatsapp"></i> Send via WhatsApp
-                </a>
-              </div>
-
-            </form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name">
           </div>
-        </div>
+
+          <div class="mb-3">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Enter your Email">
+          </div>
+
+          <div class="mb-3">
+            <label for="inputAddress" class="form-label">Place</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Enter your place">
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Mobile Number</label>
+            <input type="number" class="form-control" id="phone" placeholder="Enter your mobile number">
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Upload your file</label>
+            <div class="input-group">
+              <button class="btn btn-outline-secondary" type="button" id="button-file">
+                <i class="bi bi-upload"></i> Choose File
+              </button>
+              <input type="file" class="form-control d-none" id="fileInput">
+              <input type="text" class="form-control" id="file-name" value="No file chosen" readonly>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <a href="#" id="whatsapp-button" class="btn btn-success w-100">
+              <i class="bi bi-whatsapp"></i> Send via WhatsApp
+            </a>
+          </div>
+
+        </form>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- JS section -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script>
+  // File upload
+  const fileInput = document.getElementById('fileInput');
+  const button = document.getElementById('button-file');
+  const fileName = document.getElementById('file-name');
 
-    <script>
-      // File upload
-      const fileInput = document.getElementById('fileInput');
-      const button = document.getElementById('button-file');
-      const fileName = document.getElementById('file-name');
+  button.addEventListener('click', () => {
+    fileInput.click();
+  });
 
-      button.addEventListener('click', () => {
-        fileInput.click();
-      });
+  fileInput.addEventListener('change', () => {
+    if(fileInput.files.length > 0){
+      fileName.value = fileInput.files[0].name;
+    } else {
+      fileName.value = "No file chosen";
+    }
+  });
 
-      fileInput.addEventListener('change', () => {
-        if(fileInput.files.length > 0){
-          fileName.value = fileInput.files[0].name;
-        } else {
-          fileName.value = "No file chosen";
-        }
-      });
+  // WhatsApp button
+  const whatsappButton = document.getElementById('whatsapp-button');
 
-      // WhatsApp button
-      const whatsappButton = document.getElementById('whatsapp-button');
+  whatsappButton.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent default link action
 
-      whatsappButton.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent default link action
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('inputEmail4').value;
+    const place = document.getElementById('inputAddress').value;
+    let phone = document.getElementById('phone').value;
+    const message = document.getElementById('exampleFormControlTextarea1').value;
+    const fileNameInput = fileInput.files.length > 0 ? fileInput.files[0].name : "No file attached";
 
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('inputEmail4').value;
-        const place = document.getElementById('inputAddress').value;
-        const phone = document.getElementById('phone').value;
-        const message = document.getElementById('exampleFormControlTextarea1').value;
-        const fileNameInput = fileInput.files.length > 0 ? fileInput.files[0].name : "No file attached";
+    if(!name || !phone){
+      alert("Please enter your name and phone number.");
+      return;
+    }
 
-        if(!name || !phone){
-          alert("Please enter your name and phone number.");
-          return;
-        }
+    // Add India country code if missing (10-digit number)
+    if(phone.length === 10){
+      phone = "91" + phone;
+    }
 
-        const text = `Name: ${name}\nEmail: ${email}\nPlace: ${place}\nPhone: ${phone}\nMessage: ${message}\nFile: ${fileNameInput}`;
-        const whatsappNumber = "00966509411956"; // Replace with your number including country code
-        const encodedText = encodeURIComponent(text);
+    const text = `Name: ${name}%0AEmail: ${email}%0APlace: ${place}%0APhone: ${phone}%0AMessage: ${message}%0AFile: ${fileNameInput}`;
+    const whatsappNumber = phone; // Use the user's phone as the recipient
+    const encodedText = encodeURIComponent(text);
 
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodedText}`, "_blank");
-      });
-    </script>
+    // Open WhatsApp
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedText}`, "_blank");
+  });
+</script>
 </body>
 </html>
