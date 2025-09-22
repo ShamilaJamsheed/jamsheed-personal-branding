@@ -22,26 +22,22 @@ function sendwhatsapp() {
 }
 
 //email section
-
-
-
-
-
  function sendMail() {
-    const params = {
-      fname: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      place: document.getElementById("place").value,
-      phone: document.getElementById("phone").value,
-      message: document.getElementById("message").value
-    }
+  const params = {
+    fname: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    place: document.getElementById("place").value,
+    phone: document.getElementById("phone").value,
+    message: document.getElementById("msg").value
+  };
 
-    emailjs.send("service_pxsx08d", "template_uhx67p8", params)
-      .then(function(response) {
-        alert("Email sent successfully!")
-        console.log("SUCCESS!", response.status, response.text)
-      }, function(error) {
-        alert("Failed to send email. Please try again.")
-        console.error("FAILED...", error)
-      })
+  emailjs.send("service_pxsx08d", "template_uhx67p8", params)
+    .then(function(response) {
+      alert("Email sent successfully!");
+      document.getElementById("contactForm").reset();
+      console.log("SUCCESS!", response.status, response.text);
+    }, function(error) {
+      alert("Failed to send email. Please try again.");
+      console.error("FAILED...", error);
+    });
 }
