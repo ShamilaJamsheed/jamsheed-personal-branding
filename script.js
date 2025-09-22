@@ -23,14 +23,28 @@ function sendwhatsapp() {
 
 //email section
 
-function sendMail(){
-    let parms={
-        name:document.getElementById("name").value,
-        email:document.getElementById("email").value,
-        place:document.getElementById("place").value,
-        phone:document.getElementById("phone").value,
-        message:document.getElementById("message").value,
+
+
+
+
+  function sendMail() {
+    // Get form values
+    const params = {
+      fname: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      place: document.getElementById("place").value,
+      phone: document.getElementById("phone").value,
+      message: document.getElementById("message").value
     }
 
-    emailjs.send("service_pxsx08d","template_uhx67p8",parms).then(alert("Email sent successfully"))
-}
+    // Send email
+    emailjs.send("service_pxsx08d", "template_uhx67p8", params)
+      .then(function(response) {
+        alert("Email sent successfully!")
+        console.log("SUCCESS!", response.status, response.text)
+      }, function(error) {
+        alert("Failed to send email. Please try again.")
+        console.error("FAILED...", error)
+      })
+  }
+
