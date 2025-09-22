@@ -16,42 +16,49 @@
 html {
     scroll-behavior: smooth;
 }
+body {
+    padding-top: 90px; /* ensures content is not hidden behind fixed header */
+}
+.card img {
+    width: 100%;
+    height: 16em;
+    object-fit: cover;
+}
 </style>
 </head>
-
 <body>
-<!-- header section -->
-<header class="bg-dark bg-gradient">
-  <div class="row text-white">
-    <div class="col-md-6 col-9 p-2 ps-5">
-      <h2>Jamsheed P A</h2>
-    </div>
-    <div class="col-md-6 col-9 my-auto">
-      <nav class="navbar navbar-expand-lg navbar-dark">
-        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item active"><a class="nav-link text-white" href="#home">Home</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact me</a></li>
-          </ul>
-        </div>
-      </nav>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Jamsheed PA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
     </div>
   </div>
-</header>
+</nav>
 
-<!-- home section -->
+<!-- Home Section -->
 <section id="home" class="p-5">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-md-6 col-9">
-        <img src="./jamsheed.jpeg" alt="jamsheed photo" class="img-fluid rounded-circle">
+      <div class="col-12 text-center">
+        <img src="./jamsheed.jpeg" alt="jamsheed photo" class="img-fluid rounded-circle mb-3" style="max-width:200px;">
       </div>
-      <div class="col-md-6">
+      <div class="col-md-8 mx-auto text-center">
         <h4>Manpower And Project Support Specialist</h4>
         <p>"Efficient planning, seamless coordination, and proactive support are the pillars that turn projects into success stories."</p>
         <footer>-Jamsheed</footer>
@@ -59,179 +66,165 @@ html {
     </div>
   </div>
 </section>
-    <!-- services section -->
-
-<section class="bg-light p-5">
-    <div class="container align-items-center">
-        <h1 class="card border border-white text-center">Services</h1>
-        
-        <div class="row h-100">
-            <div class="col-md-4">
-            <div class="card p-3 border border-white text-center">
-                <div class="card-body">
-    <img src="https://www.hcr-llc.com/hs-fs/hubfs/Blog_Images/Subcontracting.jpg?width=750&name=Subcontracting.jpg" alt="..." class="img-thumbnail object-fit-cover" style="height:16em">
-    <h5 class="card-title ">SUBCONTRACTING SERVICES</h5>
-    <p class="card-text text-justify">We specialize in providing end-to-end subcontracting solutions tailored to meet the needs of contractors, developers, and project owners. Whether your project is in construction, oil & gas, manufacturing, or facility management, we supply the right workforce and expertise to ensure smooth execution.Our subcontracting services allow you to focus on your core operations while we handle manpower planning, deployment, and supervision with efficiency and professionalism.</p>
-</div>
-</div>
-</div> 
-
-<div class="col-md-4">
-<div class="card p-3 border border-white text-center">
-                <div class="card-body">
-    <img src="https://www.shutterstock.com/shutterstock/photos/1336612238/display_1500/stock-photo-business-administrator-in-action-of-manpower-or-human-resource-planning-or-business-organisation-on-1336612238.jpg" alt="..." class="img-thumbnail object-fit-cover" style="height:16em">
-    <h5 class="card-title text-center">MANPOWER SERVICES</h5>
-    <p class="card-text text-justify">We understand that the right people are the foundation of every successful project. Our manpower services are designed to provide skilled, semi-skilled, and unskilled workers to meet your project’s exact requirements — on time, every time.We take pride in sourcing, vetting, and deploying qualified personnel who are trained to perform efficiently and safely in challenging environments.</p>
-</div>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card p-3 border border-white text-center">
-                <div class="card-body">
-    <img src="https://cdn.prod.website-files.com/65b217df08a6f1f6aba3d4ce/6840d627434e5b76e78091b9_682b223a39ddd9d69abf35ff_1666945434079.jpeg" alt="..." class="img-thumbnail object-fit-cover" style="height:16em">
-    <h5 class="card-title text-center">SOLAR POST & TRACKER
-INSTALLATION SERVICES</h5>
-    <p class="card-text text-justify">We support the transition to renewable energy by providing expert solar post and tracker installation services. Our skilled teams handle the end-to-end process — from site preparation and foundation works to precise installation and alignment — ensuring maximum energy efficiency for your solar projects.We deliver turnkey manpower and installation solutions to EPC contractors, solar farm developers, and renewable energy companies.</p>
-</div>
-</div>
-</div>
-
-<div class="row h-100">
-<div class="col-md-4">
-<div class="card p-3 border border-white text-center">
-                <div class="card-body">
-    <img src="https://www.pbsm.it/wp-content/uploads/2022/12/BIM.jpg" alt="..." class="img-thumbnail object-fit-cover" style="height:16em">
-    <h5 class="card-title text-center">BUILDING INFORMATION MODELING (BIM)</h5>
-    <p class="card-text text-justify">We leverage Building Information Modeling (BIM) to bring efficiency, accuracy, and collaboration to every stage of construction. Our BIM services help project owners, architects, contractors, and engineers visualize, plan, and manage projects with data-rich, 3D models that reduce risks and optimize resources.We transform traditional construction workflows into digitally integrated processes that ensure better design coordination, faster execution, and reduced rework.</p>
-</div>
-</div>
-</div>
 
 
-<div class="col-md-4">
-<div class="card p-3 border border-white text-center">
-                <div class="card-body">
-    <img src="https://mag.com.kw/wp-content/uploads/2024/11/technician-checking-heating-system-boiler-room_169016-53608-1024x683.jpg" alt="..." class="img-thumbnail object-fit-cover" style="height:16em">
-    <h5 class="card-title text-center">MEP (MECHANICAL,ELECTRICAL,AND
-PLUMBING)</h5>
-    <p class="card-text text-justify">we deliver comprehensive MEP (Mechanical, Electrical, and Plumbing) services that form the backbone of any successful building project. Our expert team ensures that all mechanical systems, electrical installations, and plumbing networks are designed, installed, and maintained with precision — resulting in safe, efficient, and sustainable facilities.We support contractors, developers, and facility owners by providing skilled manpower and turnkey solutions for MEP works in residential, commercial, and industrial projects.</p>
-</div>
-</div>
-</div>
+    <!-- Services Section -->
+<section id="services" class="bg-light p-5">
+  <div class="container">
+    <h1 class="text-center mb-5">Services</h1>
+    <div class="row g-4">
 
-<div class="col-md-4">
-<div class="card p-3 border border-white text-center">
-                <div class="card-body">
-    <img src="https://www.softwebsolutions.com/wp-content/uploads/2019/08/IoT-based-Asset-solutions-1.jpg" alt="..." class="img-thumbnail object-fit-cover" style="height:16em">
-    <h5 class="card-title text-center"></h5>SECURITY SYSTEM & IOT SOLUTIONS</h5>
-    <p class="card-text text-justify">We provide advanced security system and IoT (Internet of Things) solutions that protect your assets, streamline operations, and give you real-time control over your facilities. Our technology-driven approach helps businesses, contractors, and property owners create safer, smarter, and more efficient environments.Whether you need a single security system or a fully integrated IoT-enabled smart solution, we design, install, and maintain systems that fit your exact requirements.</p>
-</div>
-</div>
-</div>
-</div>
-
-<div class="row h-100">
-<div class="col-md-4">
-<div class="card p-3 border border-white text-center">
-                <div class="card-body">
-    <img src="https://news.aeuvic.asn.au/app/uploads/2023/07/Camp.jpg" alt="..." class="img-thumbnail object-fit-cover" style="height:16em">
-    <h5 class="card-title text-center">CAMP ARRANGEMENT</h5>
-    <p class="card-text text-justify">we provide end-to-end camp arrangement services to ensure your workforce is comfortably accommodated and fully supported throughout the project duration. From setting up temporary camps to managing daily operations, we handle everything so your team can focus on productivity.Our camp services are designed to meet international health, safety, and hygiene standards — keeping your workforce safe, well-fed, and motivated.</p>
-</div>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card p-3 border border-white text-center">
-                <div class="card-body">
-    <img src="https://5.imimg.com/data5/SELLER/Default/2024/12/472897893/NU/QB/PE/3189598/portable-labour-toilets-with-overhead-water-tank-1000x1000.png" alt="..." class="img-thumbnail  object-fit-cover" style="height:16em">
-    <h5 class="card-title text-center">PORTABLE TOILET</h5>
-    <p class="card-text text-justify">we offer portable toilet rental and management services designed to keep your project sites, camps, and events clean, hygienic, and compliant with health regulations.Our portable toilets are well-maintained, easy to install, and available in various configurations to suit workforce size, site location, and client requirements.</p>
-</div>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card p-3 border border-white text-center">
-                <div class="card-body">
-    <img src="https://intellixaa.com/images/about.jpg" alt="..." class="img-thumbnail object-fit-cover" style="height:16em">
-    <h5 class="card-title text-center">IT SOLUTIONS</h5>
-    <p class="card-text text-justify">we provide comprehensive IT solutions designed to enhance business operations, improve efficiency, and support digital transformation. From network setup to software deployment and cybersecurity, we deliver solutions tailored to your organization’s needs.Our team of skilled IT professionals ensures that your systems are reliable, secure, and optimized for maximum performance.</p>
-</div>
-</div>
-</div>
-</div>
-
-<div class="row h-100">
-<div class="col-md-4 h-100">
-<div class="card p-3 border border-white text-center">
-                <div class="card-body">
-    <img src="https://dukaan.b-cdn.net/700x700/webp/projecteagle/images/cfb6dcce-336c-432c-85d2-100c1b2c291a.jpg" alt="..." class="img-thumbnail object-fit-cover" style="height:16em">
-    <h5 class="card-title text-center">SCRAP MERCHANT</h5>
-    <p class="card-text text-justify">we specialize in the collection, buying, and selling of scrap materials. We work with businesses, contractors, and industries to ensure that their scrap is managed responsibly and turned into valuable resources.Our expertise ensures a safe, sustainable, and cost-effective way to dispose of, recycle, or sell scrap materials.</p>
-</div>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card p-3 border border-white text-center">
-                <div class="card-body">
-    <img src="https://www.steelspecialtiesinc.net/wp-content/uploads/2021/01/el-paso-metal-fabrication-1024x683.jpeg" alt="..." class="img-thumbnail object-fit-cover" style="height:16em">
-    <h5 class="card-title text-center">STEEL FABRICATION</h5>
-    <p class="card-text text-justify">we provide comprehensive steel fabrication services for industrial, commercial, and construction projects. Our skilled team and modern equipment allow us to deliver customized, high-quality steel structures that meet project specifications and deadlines.From design and cutting to welding and finishing, we ensure every piece of steel is fabricated with precision and durability in mind.</p>
-</div>
-</div>
-</div>
-</div>
-
+      <!-- Subcontracting Services -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-center p-3">
+          <img src="https://www.hcr-llc.com/hs-fs/hubfs/Blog_Images/Subcontracting.jpg?width=750&name=Subcontracting.jpg" class="card-img-top" alt="Subcontracting Services" style="height:16em; object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">SUBCONTRACTING SERVICES</h5>
+            <p class="card-text text-justify">We specialize in providing end-to-end subcontracting solutions tailored to meet the needs of contractors, developers, and project owners. Whether your project is in construction, oil & gas, manufacturing, or facility management, we supply the right workforce and expertise to ensure smooth execution. Our subcontracting services allow you to focus on your core operations while we handle manpower planning, deployment, and supervision with efficiency and professionalism.</p>
+          </div>
         </div>
-    
+      </div>
+
+      <!-- Manpower Services -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-center p-3">
+          <img src="https://www.shutterstock.com/shutterstock/photos/1336612238/display_1500/stock-photo-business-administrator-in-action-of-manpower-or-human-resource-planning-or-business-organisation-on-1336612238.jpg" class="card-img-top" alt="Manpower Services" style="height:16em; object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">MANPOWER SERVICES</h5>
+            <p class="card-text text-justify">We provide skilled, semi-skilled, and unskilled workers to meet your project’s exact requirements — on time, every time. We take pride in sourcing, vetting, and deploying qualified personnel who are trained to perform efficiently and safely in challenging environments.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solar Post & Tracker Installation -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-center p-3">
+          <img src="https://cdn.prod.website-files.com/65b217df08a6f1f6aba3d4ce/6840d627434e5b76e78091b9_682b223a39ddd9d69abf35ff_1666945434079.jpeg" class="card-img-top" alt="Solar Installation" style="height:16em; object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">SOLAR POST & TRACKER INSTALLATION SERVICES</h5>
+            <p class="card-text text-justify">We support the transition to renewable energy by providing expert solar post and tracker installation services, handling site preparation to precise installation for maximum energy efficiency.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BIM -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-center p-3">
+          <img src="https://www.pbsm.it/wp-content/uploads/2022/12/BIM.jpg" class="card-img-top" alt="Building Information Modeling" style="height:16em; object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">BUILDING INFORMATION MODELING (BIM)</h5>
+            <p class="card-text text-justify">We leverage BIM to bring efficiency, accuracy, and collaboration to every stage of construction, helping project owners, architects, contractors, and engineers visualize, plan, and manage projects with data-rich, 3D models.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEP -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-center p-3">
+          <img src="https://mag.com.kw/wp-content/uploads/2024/11/technician-checking-heating-system-boiler-room_169016-53608-1024x683.jpg" class="card-img-top" alt="MEP Services" style="height:16em; object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">MEP (MECHANICAL, ELECTRICAL, AND PLUMBING)</h5>
+            <p class="card-text text-justify">We deliver comprehensive MEP services ensuring all mechanical, electrical, and plumbing systems are designed, installed, and maintained efficiently.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Security & IoT -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-center p-3">
+          <img src="https://www.softwebsolutions.com/wp-content/uploads/2019/08/IoT-based-Asset-solutions-1.jpg" class="card-img-top" alt="Security System & IoT Solutions" style="height:16em; object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">SECURITY SYSTEM & IOT SOLUTIONS</h5>
+            <p class="card-text text-justify">We provide advanced security and IoT solutions to protect assets, streamline operations, and give real-time control over your facilities.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Camp Arrangement -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-center p-3">
+          <img src="https://news.aeuvic.asn.au/app/uploads/2023/07/Camp.jpg" class="card-img-top" alt="Camp Arrangement" style="height:16em; object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">CAMP ARRANGEMENT</h5>
+            <p class="card-text text-justify">End-to-end camp arrangement services ensuring workforce comfort, safety, and productivity during project duration.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portable Toilet -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-center p-3">
+          <img src="https://5.imimg.com/data5/SELLER/Default/2024/12/472897893/NU/QB/PE/3189598/portable-labour-toilets-with-overhead-water-tank-1000x1000.png" class="card-img-top" alt="Portable Toilet" style="height:16em; object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">PORTABLE TOILET</h5>
+            <p class="card-text text-justify">We offer portable toilet rental and management services for clean, hygienic project sites and events.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- IT Solutions -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-center p-3">
+          <img src="https://intellixaa.com/images/about.jpg" class="card-img-top" alt="IT Solutions" style="height:16em; object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">IT SOLUTIONS</h5>
+            <p class="card-text text-justify">Comprehensive IT solutions enhancing business operations, efficiency, and digital transformation.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scrap Merchant -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-center p-3">
+          <img src="https://dukaan.b-cdn.net/700x700/webp/projecteagle/images/cfb6dcce-336c-432c-85d2-100c1b2c291a.jpg" class="card-img-top" alt="Scrap Merchant" style="height:16em; object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">SCRAP MERCHANT</h5>
+            <p class="card-text text-justify">We specialize in collection, buying, and selling of scrap materials responsibly and efficiently.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Steel Fabrication -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 text-center p-3">
+          <img src="https://www.steelspecialtiesinc.net/wp-content/uploads/2021/01/el-paso-metal-fabrication-1024x683.jpeg" class="card-img-top" alt="Steel Fabrication" style="height:16em; object-fit:cover;">
+          <div class="card-body">
+            <h5 class="card-title">STEEL FABRICATION</h5>
+            <p class="card-text text-justify">Comprehensive steel fabrication services for industrial, commercial, and construction projects with precision and quality.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
-<!-- contact section -->
-<section id="contact" class="bg-light p-5">
+
+<!-- Contact Section -->
+<section id="contact" class="p-5">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 offset-md-3 border border-gray rounded p-4">
+      <div class="col-12 col-md-6 offset-md-3 border rounded p-4">
         <form id="contactForm">
-
           <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="name" placeholder="Enter your name">
           </div>
-
           <div class="mb-3">
             <label for="inputEmail4" class="form-label">Email</label>
             <input type="email" class="form-control" id="inputEmail4" placeholder="Enter your Email">
           </div>
-
           <div class="mb-3">
             <label for="inputAddress" class="form-label">Place</label>
             <input type="text" class="form-control" id="inputAddress" placeholder="Enter your place">
           </div>
-
           <div class="mb-3">
             <label for="phone" class="form-label">Mobile Number</label>
             <input type="number" class="form-control" id="phone" placeholder="Enter your mobile number">
           </div>
-
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Message</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
           </div>
-
-          <div class="mb-3">
-            <label class="form-label">Upload your file</label>
-            <div class="input-group">
-              <button class="btn btn-outline-secondary" type="button" id="button-file">
-                <i class="bi bi-upload"></i> Choose File
-              </button>
-              <input type="file" class="form-control d-none" id="fileInput">
-              <input type="text" class="form-control" id="file-name" value="No file chosen" readonly>
-            </div>
-          </div>
-
-          <!-- WhatsApp + Email buttons -->
           <div class="mb-3 d-flex gap-2">
             <a href="#" id="whatsapp-button" class="btn btn-success w-50">
               <i class="bi bi-whatsapp"></i> WhatsApp
@@ -240,25 +233,34 @@ PLUMBING)</h5>
               <i class="bi bi-envelope"></i> Email
             </a>
           </div>
-
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- JS section -->
+<!-- Footer -->
+<footer class="bg-dark bg-gradient">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <p class="text-white m-0 py-3">© 2025 Shamila Jamsheed. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-
 <script>
-  // Initialize EmailJS (replace with your user ID)
-  emailjs.init("YOUR_USER_ID");
+  // Initialize EmailJS
+  emailjs.init("YOUR_USER_ID"); // Replace with your actual User ID
 
-  // File upload
   const fileInput = document.getElementById('fileInput');
   const button = document.getElementById('button-file');
   const fileName = document.getElementById('file-name');
 
+  // File input handling
   button.addEventListener('click', () => fileInput.click());
   fileInput.addEventListener('change', () => {
     fileName.value = fileInput.files.length > 0 ? fileInput.files[0].name : "No file chosen";
@@ -267,32 +269,59 @@ PLUMBING)</h5>
   // WhatsApp button
   document.getElementById('whatsapp-button').addEventListener('click', function(e){
     e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('inputEmail4').value;
-    const place = document.getElementById('inputAddress').value;
-    let phone = document.getElementById('phone').value;
-    const message = document.getElementById('exampleFormControlTextarea1').value;
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('inputEmail4').value.trim();
+    const place = document.getElementById('inputAddress').value.trim();
+    let phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('exampleFormControlTextarea1').value.trim();
     const fileNameInput = fileInput.files.length > 0 ? fileInput.files[0].name : "No file attached";
 
-    if(!name || !phone){ alert("Please enter name and phone."); return; }
+    if(!name || !phone){
+      alert("Please enter your name and phone number.");
+      return;
+    }
 
-    if(phone.length === 10) phone = "00966" + phone; // Add India code if missing
-    const whatsappNumber = "509411956"; // Your WhatsApp number
+    // Format Saudi number if 10 digits
+    if(phone.length === 10) phone = "966" + phone;
+
+    const whatsappNumber = "966509411956"; // Replace with your actual WhatsApp number
     const text = `Name: ${name}%0AEmail: ${email}%0APlace: ${place}%0APhone: ${phone}%0AMessage: ${message}%0AFile: ${fileNameInput}`;
     window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
   });
 
-  // Email button using EmailJS
-  document.getElementById('email-button').addEventListener('click', function(e){
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('inputEmail4').value;
-    const place = document.getElementById('inputAddress').value;
-    const phone = document.getElementById('phone').value;
-    const message = document.getElementById('exampleFormControlTextarea1').value;
-    const fileNameInput = fileInput.files.length > 0 ? fileInput.files[0].name : "No file attached";
+  // Helper to convert file to Base64
+  function fileToBase64(file){
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result.split(',')[1]); // get Base64 string
+      reader.onerror = error => reject(error);
+    });
+  }
 
-    if(!name || !email){ alert("Please enter name and email."); return; }
+  // Email button
+  document.getElementById('email-button').addEventListener('click', async function(e){
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('inputEmail4').value.trim();
+    const place = document.getElementById('inputAddress').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('exampleFormControlTextarea1').value.trim();
+
+    if(!name || !email){
+      alert("Please enter your name and email.");
+      return;
+    }
+
+    let attachment = null;
+    let attachmentName = "No file attached";
+
+    if(fileInput.files.length > 0){
+      attachmentName = fileInput.files[0].name;
+      attachment = await fileToBase64(fileInput.files[0]);
+    }
 
     emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
       name: name,
@@ -300,13 +329,17 @@ PLUMBING)</h5>
       phone: phone,
       place: place,
       message: message,
-      file: fileNameInput
+      attachment: attachment, // Base64 string
+      attachment_name: attachmentName
     }).then(function(response){
       alert("Email sent successfully!");
+      document.getElementById('contactForm').reset();
+      fileName.value = "No file chosen";
     }, function(error){
       alert("Failed to send email: " + JSON.stringify(error));
     });
   });
 </script>
+
 </body>
 </html>
