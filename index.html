@@ -226,13 +226,17 @@ body {
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
           </div>
           <div class="mb-3 d-flex gap-2">
-            <a href="#" id="whatsapp-button" class="btn btn-success w-50">
-              <i class="bi bi-whatsapp"></i> WhatsApp
-            </a>
-            <a href="#" id="email-button" class="btn btn-primary w-50">
-              <i class="bi bi-envelope"></i> Email
-            </a>
-          </div>
+  <!-- WhatsApp Button -->
+  <button type="button" id="whatsapp-button" class="btn btn-success w-50 d-flex align-items-center justify-content-center">
+    <i class="bi bi-whatsapp me-2"></i> Send via WhatsApp
+  </button>
+
+  <!-- Email Button -->
+  <button type="button" id="email-button" class="btn btn-primary w-50 d-flex align-items-center justify-content-center">
+    <i class="bi bi-envelope me-2"></i> Send via Email
+  </button>
+</div>
+
         </form>
       </div>
     </div>
@@ -254,7 +258,7 @@ body {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script>
   // Initialize EmailJS
-  emailjs.init("YOUR_USER_ID"); // Replace with your actual User ID
+  emailjs.init("manpoweralamal@gmail.com"); // Replace with your actual User ID
 
   const fileInput = document.getElementById('fileInput');
   const button = document.getElementById('button-file');
