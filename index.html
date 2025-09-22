@@ -199,7 +199,7 @@ body {
   </div>
 </section>
 
-<!-- Contact Section -->
+<!-- Contact form -->
 <section id="contact" class="p-5">
   <div class="container">
     <h1 class="text-center mb-5">Connect with me</h1>
@@ -208,11 +208,11 @@ body {
         <form id="contactForm">
           <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
           </div>
           <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your Email">
+            <input type="email" class="form-control" id="email" placeholder="Enter your Email" required>
           </div>
           <div class="mb-3">
             <label for="place" class="form-label">Place</label>
@@ -220,67 +220,111 @@ body {
           </div>
           <div class="mb-3">
             <label for="phone" class="form-label">Mobile Number</label>
-            <input type="number" class="form-control" id="phone" placeholder="Enter your mobile number">
+            <input type="tel" class="form-control" id="phone" placeholder="Enter your mobile number">
           </div>
           <div class="mb-3">
             <label for="msg" class="form-label">Message</label>
-            <textarea class="form-control" id="msg" rows="5"></textarea>
+            <textarea class="form-control" id="msg" rows="5" placeholder="Enter your message"></textarea>
           </div>
-          
-
           <div class="mb-3">
-  <!-- File Upload -->
-  <label for="file" class="form-label">Attach File</label>
-  <input type="file" class="form-control" id="file" name="file">
-</div>
+            <label for="file" class="form-label">Attach File</label>
+            <input type="file" class="form-control" id="file" name="file">
+          </div>
 
-<!-- Buttons Row -->
-<div class="d-flex gap-2 mt-2">
-  <!-- WhatsApp Button -->
-  <button type="button" class="btn btn-success d-inline-flex align-items-center" onclick="sendwhatsapp()">
-    <i class="bi bi-whatsapp me-2"></i> WhatsApp
-  </button>
-
-  <!-- Email Button -->
-  <button type="button" id="email-button" class="btn btn-primary d-inline-flex align-items-center" onclick="sendMail()">
-    <i class="bi bi-envelope me-2"></i> Email
-  </button>
-</div>
-
-
-
-
+          <!-- Buttons -->
+          <div class="d-flex gap-2 mt-2">
+            <button type="button" class="btn btn-success d-inline-flex align-items-center" onclick="sendwhatsapp()">
+              <i class="bi bi-whatsapp me-2"></i> WhatsApp
+            </button>
+            <button type="button" id="email-button" class="btn btn-primary d-inline-flex align-items-center" onclick="sendMail()">
+              <i class="bi bi-envelope me-2"></i> Email
+            </button>
+          </div>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-dark bg-gradient">
+<!-- footer section -->
+
+<footer class="bg-dark text-white py-4">
   <div class="container">
-    <div class="row">
-      <div class="col text-center">
-        <p class="text-white m-0 py-3">© 2025 Shamila Jamsheed. All Rights Reserved.</p>
+    <div class="row align-items-center">
+      
+      <!-- Left: Copyright -->
+      <div class="text-center mb-5">
+        <p class="m-0">© 2025 Shamila Jamsheed. All Rights Reserved.</p>
       </div>
-    </div>
+
+          </div>
   </div>
 </footer>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS
+  emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
 
-<script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "-dPJFJEh8SNQXsg1Y",
+  // WhatsApp function
+  function sendwhatsapp() {
+    const ph = "+966509411956"; // Change to your number
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const place = document.getElementById('place').value;
+    const phone = document.getElementById('phone').value;
+    const msg = document.getElementById('msg').value;
+
+    const url = `https://wa.me/${ph}?text=*Name:* ${encodeURIComponent(name)}%0a*Email:* ${encodeURIComponent(email)}%0a*Place:* ${encodeURIComponent(place)}%0a*Phone:* ${encodeURIComponent(phone)}%0a*Message:* ${encodeURIComponent(msg)}`;
+
+    window.open(url, '_blank').focus();
+  }
+
+  // Convert file to Base64
+  function toBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
+  }
+
+  // EmailJS function
+  async function sendMail() {
+    const form = document.getElementById("contactForm");
+    const fileInput = document.getElementById("file");
+
+    const params = {
+      fname: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      place: document.getElementById("place").value,
+      phone: document.getElementById("phone").value,
+      message: document.getElementById("msg").value,
+      attachment: ""
+    };
+
+    // Convert file to base64 if selected
+    if (fileInput.files.length > 0) {
+      const file = fileInput.files[0];
+      const base64 = await toBase64(file);
+      params.attachment = base64;
+    }
+
+    // Send email
+    emailjs.send("service_pxsx08d", "template_uhx67p8", params)
+      .then(response => {
+        alert("Email sent successfully!");
+        form.reset();
+        console.log("SUCCESS!", response.status, response.text);
+      })
+      .catch(error => {
+        alert("Failed to send email. Please try again.");
+        console.error("FAILED...", error);
       });
-   })();
+  }
 </script>
-
-<script src="script.js"></script>
 </body>
 </html>
+
