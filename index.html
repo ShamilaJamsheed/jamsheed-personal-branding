@@ -227,20 +227,22 @@ body {
           </div>
           <div class="mb-3 d-flex gap-2">
   <!-- WhatsApp Button -->
-  <button type="button" id="whatsapp-button" class="btn btn-success w-50 d-flex align-items-center justify-content-center" onclick="sendwhatsapp()">
-    <i class="bi bi-whatsapp me-2"></i> Send via WhatsApp
-  </button>
+ <!-- WhatsApp Button -->
+<button type="button" id="whatsapp-button" class="btn btn-success w-50 d-flex align-items-center justify-content-center" onclick="sendwhatsapp()">
+  <i class="bi bi-whatsapp me-2"></i> Send via WhatsApp
+</button>
 
-  <!-- Email Button -->
-  <button type="button" id="email-button" class="btn btn-primary w-50 d-flex align-items-center justify-content-center">
-    <i class="bi bi-envelope me-2"></i> Send via Email
-  </button>
+<!-- Email Button -->
+<button type="button" id="email-button" class="btn btn-primary w-50 d-flex align-items-center justify-content-center">
+  <i class="bi bi-envelope me-2"></i> Send via Email
+</button>
+
+</div> <!-- Make sure this matches an opening div above -->
+
+</form>
 </div>
-
-        </form>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
 </section>
 
 <!-- Footer -->
@@ -256,23 +258,26 @@ body {
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-function sendwhatsapp(){
-    var ph="+919526607633"
 
-    var name=document.querySelector('.name').value;
-    var email=document.querySelector('.email').value;
-    var place=document.querySelector('.place').value;
-    var phone=document.querySelector('.phone').value;
-    var msge=document.querySelector('.msg').value;
+<!-- Custom JS -->
+<script>
+function sendwhatsapp() {
+    var ph = "+919526607633";
 
-    var url="https://wa.me/" + ph +"?text="
-    +"*Name :"+name+"%0a"
-    +"*Email :"+email+"%0a"
-    +"*Place :"+place+"%0a"
-    +"*Phone :"+phone+"%0a"
-    +"*Message :"+msg+"%0a"
+    var name = document.querySelector('.name').value;
+    var email = document.querySelector('.email').value;
+    var place = document.querySelector('.place').value;
+    var phone = document.querySelector('.phone').value;
+    var msg = document.querySelector('.msg').value; // Fixed variable name
 
-    window.open(url,'_blank').focus();
+    var url = "https://wa.me/" + ph + "?text="
+        + "*Name:* " + name + "%0a"
+        + "*Email:* " + email + "%0a"
+        + "*Place:* " + place + "%0a"
+        + "*Phone:* " + phone + "%0a"
+        + "*Message:* " + msg + "%0a";
+
+    window.open(url, '_blank').focus();
 }
 </script>
 
