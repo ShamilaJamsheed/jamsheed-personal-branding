@@ -225,24 +225,22 @@ body {
             <label for="msg" class="form-label">Message</label>
             <textarea class="form-control" id="msg" rows="5"></textarea>
           </div>
+
           <div class="mb-3 d-flex gap-2">
-  <!-- WhatsApp Button -->
- <!-- WhatsApp Button -->
-<button type="button" id="whatsapp-button" class="btn btn-success w-50 d-flex align-items-center justify-content-center" onclick="sendwhatsapp()">
-  <i class="bi bi-whatsapp me-2"></i> Send via WhatsApp
-</button>
+            <!-- WhatsApp Button -->
+            <button type="button" id="whatsapp-button" class="btn btn-success w-50 d-flex align-items-center justify-content-center" onclick="sendwhatsapp()">
+              <i class="bi bi-whatsapp me-2"></i> WhatsApp
+            </button>
 
-<!-- Email Button -->
-<button type="button" id="email-button" class="btn btn-primary w-50 d-flex align-items-center justify-content-center">
-  <i class="bi bi-envelope me-2"></i> Send via Email
-</button>
-
-</div> <!-- Make sure this matches an opening div above -->
-
-</form>
-</div>
-</div>
-</div>
+            <!-- Email Button -->
+            <button type="button" id="email-button" class="btn btn-primary w-50 d-flex align-items-center justify-content-center">
+              <i class="bi bi-envelope me-2"></i>Email
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Footer -->
@@ -264,18 +262,19 @@ body {
 function sendwhatsapp() {
     var ph = "+919526607633";
 
-    var name = document.querySelector('.name').value;
-    var email = document.querySelector('.email').value;
-    var place = document.querySelector('.place').value;
-    var phone = document.querySelector('.phone').value;
-    var msg = document.querySelector('.msg').value; // Fixed variable name
+    // ✅ Use getElementById() instead of querySelector('.class')
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var place = document.getElementById('place').value;
+    var phone = document.getElementById('phone').value;
+    var msg = document.getElementById('msg').value;
 
     var url = "https://wa.me/" + ph + "?text="
         + "*Name:* " + name + "%0a"
         + "*Email:* " + email + "%0a"
         + "*Place:* " + place + "%0a"
         + "*Phone:* " + phone + "%0a"
-        + "*Message:* " + msg + "%0a";
+        + "*Message:* " + msg;
 
     window.open(url, '_blank').focus();
 }
