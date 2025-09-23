@@ -244,36 +244,7 @@ body {
 </footer>
 
 <script>
-  // ✅ Initialize EmailJS
-  emailjs.init("-dPJFJEh8SNQXsg1Y"); // Replace with your public key
-
-  function sendwhatsapp() {
-    const ph = "+966509411956";
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const place = document.getElementById('place').value;
-    const phone = document.getElementById('phone').value;
-    const msg = document.getElementById('msg').value;
-    const fileInput = document.getElementById('file');
-    const fileName = fileInput.files.length > 0 ? fileInput.files[0].name : "No file selected";
-
-    const url = `https://wa.me/${ph}?text=*Name:* ${encodeURIComponent(name)}%0a*Email:* ${encodeURIComponent(email)}%0a*Place:* ${encodeURIComponent(place)}%0a*Phone:* ${encodeURIComponent(phone)}%0a*Message:* ${encodeURIComponent(msg)}%0a*File:* ${encodeURIComponent(fileName)}`;
-
-    window.open(url, '_blank').focus();
-  }
-
-  function sendMail() {
-    emailjs.sendForm("service_hb8kvd4", "template_uhx67p8", "#contactForm")
-      .then(response => {
-        alert("✅ Email sent successfully!");
-        document.getElementById("contactForm").reset();
-        console.log("SUCCESS!", response.status, response.text);
-      })
-      .catch(error => {
-        alert("❌ Failed to send email. Check console for details.");
-        console.error("FAILED...", error);
-      });
-  }
+ <a href="manpoweralamal@gmail.com" class="btn">Email Me</a> 
 </script>
 
 </body>
