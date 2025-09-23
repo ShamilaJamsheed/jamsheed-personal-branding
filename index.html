@@ -294,24 +294,37 @@ body {
     });
   }
 
-  // ✅ EmailJS function
  async function sendMail() {
+  const form = document.getElementById("contactForm");
+  const fileInput = document.getElementById("file");
+
   const params = {
     fname: document.getElementById("name").value,
     email: document.getElementById("email").value,
     place: document.getElementById("place").value,
     phone: document.getElementById("phone").value,
-    message: document.getElementById("msg").value
+    message: document.getElementById("msg").value,
+    attachment: ""
   };
 
-  emailjs.send("service_ifm0oxd", "template_uhx67p8", params)
+  if (fileInput.files.length > 0) {
+    const file = fileInput.files[0];
+    const base64 = await toBase64(file);
+    params.attachment = base64;
+  }
+
+  emailjs.send("service_pxsx08d", "template_uhx67p8", params)
     .then(response => {
       alert("✅ Email sent successfully!");
-      console.log("SUCCESS!", response);
+      form.reset();
+      console.log("SUCCESS!", response.status, response.text);
     })
     .catch(error => {
       alert("❌ Failed to send email. Check console for details.");
       console.error("FAILED...", error);
+
+      // 👇 Force show the raw error in an alert
+      alert(JSON.stringify(error, null, 2));
     });
 }
 
