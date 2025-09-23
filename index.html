@@ -264,12 +264,12 @@ body {
 <!-- EmailJS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  // Initialize EmailJS
-  emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+  // ✅ Initialize EmailJS with your public key
+  emailjs.init("-dPJFJEh8SNQXsg1Y"); // <-- Replace with your real public key
 
-  // WhatsApp function
+  // ✅ WhatsApp function
   function sendwhatsapp() {
-    const ph = "+966509411956"; // Change to your number
+    const ph = "+966509411956";
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const place = document.getElementById('place').value;
@@ -281,17 +281,20 @@ body {
     window.open(url, '_blank').focus();
   }
 
-  // Convert file to Base64
+  // ✅ Convert file to Base64 (remove prefix)
   function toBase64(file) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
+      reader.onload = () => {
+        const base64String = reader.result.split(',')[1]; // remove "data:...;base64,"
+        resolve(base64String);
+      };
       reader.onerror = error => reject(error);
     });
   }
 
-  // EmailJS function
+  // ✅ EmailJS function
   async function sendMail() {
     const form = document.getElementById("contactForm");
     const fileInput = document.getElementById("file");
@@ -302,17 +305,16 @@ body {
       place: document.getElementById("place").value,
       phone: document.getElementById("phone").value,
       message: document.getElementById("msg").value,
-      attachment: ""
+      attachment: "",
+      filename: ""
     };
 
-    // Convert file to base64 if selected
     if (fileInput.files.length > 0) {
       const file = fileInput.files[0];
-      const base64 = await toBase64(file);
-      params.attachment = base64;
+      params.attachment = await toBase64(file);
+      params.filename = file.name;
     }
 
-    // Send email
     emailjs.send("service_pxsx08d", "template_uhx67p8", params)
       .then(response => {
         alert("Email sent successfully!");
