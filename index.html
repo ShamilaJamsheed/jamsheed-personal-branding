@@ -295,38 +295,27 @@ body {
   }
 
   // ✅ EmailJS function
-  async function sendMail() {
-    const form = document.getElementById("contactForm");
-    const fileInput = document.getElementById("file");
+ async function sendMail() {
+  const params = {
+    fname: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    place: document.getElementById("place").value,
+    phone: document.getElementById("phone").value,
+    message: document.getElementById("msg").value
+  };
 
-    const params = {
-  fname: "...",
-  email: "...",
-  place: "...",
-  phone: "...",
-  message: "...",
-  attachment: "...",
-  filename: "..."
-};
+  emailjs.send("service_pxsx08d", "template_uhx67p8", params)
+    .then(response => {
+      alert("✅ Email sent successfully!");
+      console.log("SUCCESS!", response);
+    })
+    .catch(error => {
+      alert("❌ Failed to send email. Check console for details.");
+      console.error("FAILED...", error);
+    });
+}
 
-    if (fileInput.files.length > 0) {
-      const file = fileInput.files[0];
-      params.attachment = await toBase64(file);
-      params.filename = file.name;
-    }
-
-    emailjs.send("service_2724f8w", "ttemplate_uhx67p8", params)
-      .then(response => {
-        alert("Email sent successfully!");
-        form.reset();
-        console.log("SUCCESS!", response.status, response.text);
-      })
-      .catch(error => {
-  alert("Failed to send email. Please try again.");
-  console.error("FAILED...", error);
-});
-
-  }
+  
 </script>
 </body>
 </html>
