@@ -250,20 +250,31 @@ body {
 </footer>
 
 <script>
-  function sendwhatsapp() {
-    const ph = "+966509411956";
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const place = document.getElementById('place').value;
-    const phone = document.getElementById('phone').value;
-    const msg = document.getElementById('msg').value;
-    const fileInput = document.getElementById('file');
-    const fileName = fileInput.files.length > 0 ? fileInput.files[0].name : "No file selected";
+ function sendwhatsapp() {
+  const ph = "+966509411956";
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const place = document.getElementById('place').value;
+  const phone = document.getElementById('phone').value;
+  const msg = document.getElementById('msg').value;
 
-    const url = `https://wa.me/${ph}?text=*Name:* ${encodeURIComponent(name)}%0a*Email:* ${encodeURIComponent(email)}%0a*Place:* ${encodeURIComponent(place)}%0a*Phone:* ${encodeURIComponent(phone)}%0a*Message:* ${encodeURIComponent(msg)}%0a*File:* ${encodeURIComponent(fileName)}`;
+  const url = `https://wa.me/${ph}?text=*Name:* ${encodeURIComponent(name)}%0a*Email:* ${encodeURIComponent(email)}%0a*Place:* ${encodeURIComponent(place)}%0a*Phone:* ${encodeURIComponent(phone)}%0a*Message:* ${encodeURIComponent(msg)}`;
 
-    window.open(url, '_blank').focus();
-  }
+  window.open(url, '_blank').focus();
+}
+emailjs.init('-dPJFJEh8SNQXsg1Y'); // Replace with your EmailJS user ID
+
+function sendMail() {
+  const templateParams = {
+    from_name: document.getElementById('name').value,
+    from_email: document.getElementById('email').value,
+    place: document.getElementById('place').value,
+    phone: document.getElementById('phone').value,
+    message: document.getElementById('msg').value
+  };
+
+  emailjs.send('service_lgjlh8w', 'template_uhx67p8', templateParams).then(() => alert('Email sent successfully!')).catch(err => alert('Failed to send email: ' + err));
+}
 </script>
 </body>
 </html>
